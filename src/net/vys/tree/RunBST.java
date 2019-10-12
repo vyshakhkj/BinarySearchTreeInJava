@@ -1,5 +1,6 @@
 package net.vys.tree;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class RunBST {
@@ -15,7 +16,9 @@ public class RunBST {
 			System.out.println("\nBinary Search Tree Operations\n");
 			System.out.println("1. Insert");
 			System.out.println("2. Find");
-			System.out.println("3. Delete");       
+			System.out.println("3. Delete");
+			System.out.println("4. Height");
+			System.out.println("5. Display");
 			int choice = scan.nextInt();            
 			switch (choice)
 			{
@@ -33,8 +36,14 @@ public class RunBST {
 				System.out.println("Enter integer element to delete");
 				System.out.println(bst.delete(scan.nextInt()) ? "Value deleted" : "Value not found");
 
-				break;                                          
-			default : 
+				break;
+			case 4 :
+				System.out.println("Height is : " + bst.getHeight(bst.root));
+				break;
+			case 5 :
+				TreeGUI treeGUI = new TreeGUI(bst);
+				break;
+			default :
 				System.out.println("Wrong Entry \n ");
 				break;   
 			}

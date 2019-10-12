@@ -179,4 +179,10 @@ public class BinarySearchTree {
 
 	}
 
+	public int getHeight(Node root) {
+		if (root == null)
+			return 0;
+		return Math.max(getHeight(root.getLeftNode()), getHeight(root.getRightNode())) + 1;
+	}
+
 }
